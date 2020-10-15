@@ -1,18 +1,9 @@
-
+<app-header (featureSelected)="onNavigate($event)"></app-header>
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
-      <ol>Create two new Components (manually or with CLI): WarningAlert and SuccessAlert</ol>
-      <ol>Output them beneath each other in the AppComponent</ol>
-      <ol>Output a warning or success message in the Components</ol>
-      <ol>Style the Components appropriately (maybe some red/ green text?)</ol>
-      <p>Use external or internal templates and styles!</p>
-       <p>Feel free to create more components, nest them into each other or play around with different types of selectors!
-
-      </p>
-     <hr>
-     <app-warning-alert></app-warning-alert>
-     <app-success-alert></app-success-alert>
+    <div class="col-md-12">
+      <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
+      <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list>
     </div>
   </div>
 </div>
