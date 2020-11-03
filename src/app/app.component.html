@@ -1,5 +1,11 @@
 <app-header (featureSelected)="onNavigate($event)"></app-header>
 <div class="container">
+  <div>
+    <!-- translation: translation pipe -->
+    <h1>{{ 'demo.title' | translate }}</h1>
+    <button class="btn btn-primary" (click)="useLanguage('en')">en</button>
+<button class="btn btn-primary" (click)="useLanguage('de')">de</button>
+</div>
   <div class="row">
     <div class="col-md-12">
       <router-outlet></router-outlet>
